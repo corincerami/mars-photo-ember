@@ -1,3 +1,45 @@
 @import "settings";
 
 @import "foundation";
+
+.title a {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 50px;
+  color: #E8E4C2;
+  text-decoration: none;
+}
+
+body {
+  background-color: #302F2C;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 20px;
+  color: #E8E4C2;
+}
+
+h2 {
+  color: #E8E3C2;
+}
+
+h3 {
+  color: #E8E4C2;
+}
+
+h4 {
+  color: #E8E4C2;
+}
+
+.query-example {
+  background-color: #F8F4AC;
+  color: #000;
+  font-family: sans-serif;
+}
+
+.photo {
+  background-color: #52504B;
+  padding: 10px;
+  margin: 10px;
+}
+
+.highlight {
+  background-color: #52504B;
+}
