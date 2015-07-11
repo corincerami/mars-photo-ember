@@ -1,0 +1,19 @@
+{{outlet}}
+
+<h3>Rovers</h3>
+
+<div class="row">
+  {{#each model as |rover|}}
+    <div class="small-12 large-4 columns">
+      <div class="index">
+        <h4>
+          {{rover.name}}
+        </h4>
+        Landing Date: {{rover.landing_date}}
+        <p>
+          There are {{rover.total_photos}} photos for this rover.
+        </p>
+      </div>
+    </div>
+  {{/each}}
+</div>
