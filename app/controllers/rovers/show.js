@@ -1,6 +1,8 @@
 import Ember from "ember";
-const alias = Ember.computed.alias;
 
 export default Ember.Controller.extend({
-  rover: alias("model")
+  queryParams: ['sol', 'earth_date', 'camera'],
+  sol: null,
+  earth_date: null,
+  camera: null
 });

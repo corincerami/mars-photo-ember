@@ -6,5 +6,6 @@ export default DS.Model.extend({
   max_sol: DS.attr('number'),
   max_data: DS.attr('date'),
   total_photos: DS.attr('number'),
-  cameras: DS.hasMany('camera', {async: true})
+  cameras: DS.hasMany('camera', { async: true }),
+  photos: DS.hasMany('photo', { async: true })
 });

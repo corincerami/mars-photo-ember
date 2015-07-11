@@ -1,1 +1,90 @@
-<h3>{{rover.name}}</h3>
+<div class="row">
+  <h2>{{rover.name}}</h2>
+</div>
+
+{{!-- query form --}}
+
+<div class="row">
+  <p>This API is designed to collect image data gathered by
+    NASA's Mars rovers and make it more easily available to
+    other developers, educators, and citizen scientists.
+  </p>
+
+  <div class="highlight">
+    <h3>{{rover.name}}'s Cameras</h3>
+    <div class="row">
+      <p class="small-3 columns">
+        Abbreviation
+      </p>
+
+      <p class="small-9 columns">
+        Full Name
+      </p>
+    </div>
+    {{#each rover.cameras as |camera|}}
+      <div class="row">
+
+        <p class="small-3 columns">
+          {{camera.name}}
+        </p>
+
+        <p class="small-9 columns">
+          {{camera.full_name}}
+        </p>
+
+      </div>
+    {{/each}}
+  </div>
+
+</div>
+
+<div class="row">
+  <p>There are {{rover.total_photos}} photos in this collection
+    from {{rover.max_sol}} sols of {{rover.name}} exploring the Red
+    Planet. You can enter a number from 0 to {{rover.max_sol}}
+    to view the photos from that sol from any of {{rover.name}}'s cameras. The API
+    can also be queried in the following format:
+  </p>
+
+  <p>
+    Queries by Martian sol:
+    <p class="query-example">http://mars-photos.herokuapp.com/api/v1/rovers/{{rover.name}}/photos?sol={{rover.max_sol}}</p>
+  </p>
+
+  <p>
+    Querying by Earth date:
+    <p class="query-example">http://mars-photos.herokuapp.com/api/v1/rovers/{{rover.name}}/photos?earth_date={{rover.max_date}}</p>
+  </p>
+
+  <p>
+    Filtering Queries by Camera:
+    <p class="query-example">http://mars-photos.herokuapp.com/api/v1/rovers/{{rover.name}}/photos?sol={{rover.max_sol}}&camera=fhaz</p>
+    <p class="query-example">http://mars-photos.herokuapp.com/api/v1/rovers/{{rover.name}}/photos?earth_date={{rover.max_date}}&camera=fhaz</p>
+  </p>
+
+  <h4>Paginated Results</h4>
+
+  <p>
+    Responses will be limited to 25 photos per call. Queries that should return more than 25 photos will be split onto several pages, which can be accessed by adding a 'page' param to the query.
+
+    <p class="query-example">
+      http://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?sol=1000&page=2
+    </p>
+  </p>
+</div>
+
+{{#if photos}}
+  <div class="row">
+    <h3>Photos</h3>
+    {{#each photos as |photo|}}
+      <div class="photo">
+        <div>
+          <img {{bind-attr src=photo.img_src}} alt="Mars Photo">
+        </div>
+        <p>
+          Taken on sol {{photo.sol}} (approximate Earth date: {{photo.earth_date}}) with the {{photo.camera.name}} camera" %>
+        </p>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
