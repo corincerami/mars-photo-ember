@@ -2,7 +2,17 @@
   <h2>{{rover.name}}</h2>
 </div>
 
-{{!-- query form --}}
+<div class="row">
+  <form {{action "photoQuery" on="submit"}}>
+    {{input label="Sol" property="sol" value=sol}}
+    {{#x-select value=camera}}
+      {{#each rover.cameras as |camera|}}
+        {{#x-option value=camera.name}}{{camera.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <button type="submit">Find Photos</button>
+  </form>
+</div>
 
 <div class="row">
   <p>This API is designed to collect image data gathered by
@@ -82,7 +92,7 @@
           <img {{bind-attr src=photo.img_src}} alt="Mars Photo">
         </div>
         <p>
-          Taken on sol {{photo.sol}} (approximate Earth date: {{photo.earth_date}}) with the {{photo.camera.name}} camera" %>
+          Taken on sol {{photo.sol}} (approximate Earth date: {{photo.earth_date}}) with the {{photo.camera.name}} camera
         </p>
       </div>
     {{/each}}
