@@ -1,8 +1,6 @@
-# Mars-photos-ember
+# Explore Mars with Ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
+This repo is an Ember app created as the front end for the [Mars Photo API](http://mars-photos.herokuapp.com), the repo for which can be found [here](http://github.com/chrisccerami/mars-photo-api). 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
