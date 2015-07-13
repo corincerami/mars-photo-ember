@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/chrisccerami/mars-photo-ember/badges/gpa.svg)](https://codeclimate.com/github/chrisccerami/mars-photo-ember)
+[![Build Status](https://travis-ci.org/chrisccerami/mars-photo-ember.svg)](https://travis-ci.org/chrisccerami/mars-photo-ember)[![Code Climate](https://codeclimate.com/github/chrisccerami/mars-photo-ember/badges/gpa.svg)](https://codeclimate.com/github/chrisccerami/mars-photo-ember)
 
 # Explore Mars with Ember
 
