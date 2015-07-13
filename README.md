@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/chrisccerami/mars-photo-ember/badges/gpa.svg)](https://codeclimate.com/github/chrisccerami/mars-photo-ember)
+
 # Explore Mars with Ember
 
 This repo is an Ember app created as the front end for the [Mars Photo API](http://mars-photos.herokuapp.com), the repo for which can be found [here](http://github.com/chrisccerami/mars-photo-api). 
