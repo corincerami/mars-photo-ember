@@ -89,7 +89,7 @@
     {{#each photos as |photo|}}
       <div class="photo">
         <div>
-          <img {{bind-attr src=photo.img_src}} alt="Mars Photo">
+          <img src={{photo.img_src}} alt="Mars Photo">
         </div>
         <p>
           Taken on sol {{photo.sol}} (approximate Earth date: {{photo.earth_date}}) with the {{photo.camera.name}} camera
