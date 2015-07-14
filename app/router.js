@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('rovers', function() {
+  this.resource('rovers', { path: "/" }, function() {
     this.route('show', { path: '/:rover_name' }, function() {
     });
   });
