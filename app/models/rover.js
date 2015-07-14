@@ -7,5 +7,9 @@ export default DS.Model.extend({
   max_data: DS.attr('date'),
   total_photos: DS.attr('number'),
   cameras: DS.hasMany('camera', { async: true }),
-  photos: DS.hasMany('photo', { async: true })
+  photos: DS.hasMany('photo', { async: true }),
+
+  image: function() {
+    return "assets/images/" + this.get('name') + "_rover.jpg";
+  }.property()
 });
