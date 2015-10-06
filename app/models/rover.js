@@ -10,6 +10,6 @@ export default DS.Model.extend({
   photos: DS.hasMany('photo', { async: true }),
 
   image: function() {
-    return "assets/images/" + this.get('name') + "_rover.jpg";
+    return "images/" + this.get('name') + "_rover.jpg";
   }.property()
 });
