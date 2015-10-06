@@ -13,7 +13,9 @@ export default Ember.Controller.extend({
       var camera = this.get('camera');
       var url = '/api/v1/rovers/' + this.rover.name;
       url += '/photos?sol=' + sol;
-      url += '&camera=' + camera;
+      if (camera && camera != "Any") {
+        url += '&camera=' + camera;
+      }
       Ember.$.getJSON(url, function(response) {
         _this.set('photos', response.photos);
       });
